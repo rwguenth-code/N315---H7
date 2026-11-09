@@ -1,0 +1,193 @@
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 98px 24px 78px;
+  background: var(--jungle-yellow);
+}
+
+.login-container {
+  display: grid;
+  width: min(488px, 100%);
+  grid-template-columns: 144px 172px;
+  justify-content: space-between;
+  transform: translate(-10px, -13px);
+}
+
+.login-form,
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form {
+  margin-top: 73px;
+}
+
+.login-form h1,
+.signup-form h1 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  line-height: 1.25;
+}
+
+.login-form h1 {
+  margin-bottom: 23px;
+}
+
+.signup-form small {
+  margin: 0 0 1px;
+  font-size: 8px;
+  letter-spacing: 0.4px;
+}
+
+.signup-form h1 {
+  margin-bottom: 26px;
+}
+
+.login-form input,
+.signup-form input {
+  width: 100%;
+  height: 48px;
+  padding: 0 0 1px;
+  border: 0;
+  border-radius: 0;
+  outline-offset: 3px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+.login-form input::placeholder,
+.signup-form input::placeholder {
+  color: var(--ink);
+  opacity: 1;
+}
+
+.login-form button,
+.signup-form button {
+  display: inline-flex;
+  height: 43px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 28px;
+  background: var(--jungle-yellow);
+  box-shadow: 0 6px 0 rgb(134 104 34 / 28%);
+  cursor: pointer;
+  font-family: var(--display-font);
+  font-size: 16px;
+  letter-spacing: 2px;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+.login-form button {
+  width: 145px;
+  margin-top: 16px;
+}
+
+.signup-form button {
+  width: 172px;
+  margin-top: 4px;
+}
+
+@media (min-width: 761px) {
+  .login-form button {
+    position: relative;
+    top: 8px;
+  }
+
+  .signup-form button {
+    position: relative;
+    top: 16px;
+  }
+}
+
+.login-form button:hover,
+.signup-form button:hover,
+.login-form button:focus-visible,
+.signup-form button:focus-visible {
+  box-shadow: 0 3px 0 rgb(134 104 34 / 28%);
+  transform: translateY(3px);
+}
+
+.login-form button:disabled,
+.signup-form button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.login-form [data-form-message],
+.signup-form [data-form-message] {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.page-error {
+  width: min(520px, calc(100% - 48px));
+  margin: 160px auto;
+  text-align: center;
+}
+
+.page-error h1 {
+  font-size: 24px;
+}
+
+@media (max-width: 760px) {
+  .login-page {
+    min-height: 0;
+    padding: 106px 26px 48px;
+  }
+
+  .login-container {
+    width: min(420px, 100%);
+    grid-template-columns: 1fr;
+    gap: 42px;
+    transform: none;
+  }
+
+  .login-form {
+    margin-top: 0;
+  }
+
+  .login-form h1,
+  .signup-form h1 {
+    font-size: 21px;
+  }
+
+  .signup-form small {
+    font-size: 9px;
+  }
+
+  .login-form input,
+  .signup-form input {
+    height: 44px;
+    font-size: 11px;
+  }
+
+  .login-form button {
+    margin-top: 12px;
+  }
+
+  .signup-form button {
+    margin-top: 8px;
+  }
+
+  body[data-page="login"] .site-footer {
+    position: relative;
+    bottom: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-form button,
+  .signup-form button {
+    transition: none;
+  }
+}

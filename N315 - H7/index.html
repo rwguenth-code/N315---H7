@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffd972">
+    <title>The Jungle Cook | Home</title>
+
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles/footer.css">
+  </head>
+  <body data-page="home">
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="#home" aria-label="The Jungle Cook home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-dot brand-dot-blue"></span>
+            <span class="brand-dot brand-dot-green"></span>
+            <span class="brand-dot brand-dot-pink"></span>
+          </span>
+          <span class="brand-name">The Jungle Cook</span>
+        </a>
+
+        <button class="menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="links" id="primary-navigation" aria-label="Main navigation">
+          <a href="#home" data-route="home">Home</a>
+          <a href="#home">Browse</a>
+          <a href="#home">Create Recipe</a>
+          <span class="user-greeting" data-user-name hidden></span>
+          <a class="login-btn" href="#login" data-route="login" data-auth="signed-out">Login</a>
+          <button class="login-btn logout-btn" type="button" data-auth="signed-in" hidden>Logout</button>
+        </nav>
+      </header>
+
+      <p class="auth-status" id="auth-status" role="status" aria-live="polite" hidden></p>
+
+      <main id="page-content" tabindex="-1">
+        <p class="loading-message">Loading Jungle Cook...</p>
+      </main>
+
+      <footer class="site-footer">
+        <p class="copyright">Copyright © 2019 The Jungle Cook</p>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#login" data-route="login" data-auth="signed-out">Login</a>
+          <a href="#home">Recipes by Category</a>
+          <a href="#home">Privacy and Copyright</a>
+          <a href="#home">Create Recipe</a>
+          <a href="#home">Your Recipes</a>
+          <button class="footer-logout" type="button" data-auth="signed-in" hidden>Logout</button>
+        </nav>
+        <div class="social-links" aria-label="Social media">
+          <a href="https://www.facebook.com/" aria-label="Facebook">
+            <span class="social-icon facebook-icon" aria-hidden="true">f</span>
+          </a>
+          <a href="https://www.instagram.com/" aria-label="Instagram">
+            <span class="social-icon instagram-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="js/app.js"></script>
+    <script src="js/hamburger.js" defer></script>
+  </body>
+</html>

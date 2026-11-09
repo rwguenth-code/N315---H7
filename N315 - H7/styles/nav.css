@@ -1,0 +1,242 @@
+.site-header {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 98px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4vw;
+}
+
+.brand {
+  position: relative;
+  display: inline-flex;
+  min-width: 122px;
+  height: 44px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brand-mark {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 116px;
+  height: 40px;
+}
+
+.brand-dot {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.brand-dot-blue {
+  top: 2px;
+  left: 4px;
+  background: var(--jungle-blue);
+}
+
+.brand-dot-green {
+  top: 7px;
+  left: 38px;
+  width: 37px;
+  height: 37px;
+  background: var(--jungle-green);
+}
+
+.brand-dot-pink {
+  top: 18px;
+  left: 91px;
+  width: 20px;
+  height: 20px;
+  background: var(--jungle-pink);
+}
+
+.brand-name {
+  position: relative;
+  z-index: 1;
+  margin-left: 1px;
+  white-space: nowrap;
+  font-family: var(--display-font);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3.2vw, 35px);
+}
+
+.links a {
+  white-space: nowrap;
+  font-family: var(--display-font);
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+}
+
+.links a:not(.login-btn):hover,
+.links a:not(.login-btn):focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+body[data-page="home"] .links [data-route="home"],
+.links [aria-current="page"]:not(.login-btn) {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+.links .login-btn,
+.links .logout-btn {
+  display: inline-flex;
+  width: 110px;
+  height: 37px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  background: var(--jungle-yellow);
+  box-shadow: 0 6px 0 rgb(134 104 34 / 20%);
+  color: inherit;
+  cursor: pointer;
+  font-family: var(--display-font);
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
+
+body[data-page="login"] .links .login-btn {
+  box-shadow: 0 6px 0 rgb(134 104 34 / 26%);
+}
+
+.links .login-btn:hover,
+.links .login-btn:focus-visible,
+.links .logout-btn:hover,
+.links .logout-btn:focus-visible {
+  box-shadow: 0 3px 0 rgb(134 104 34 / 25%);
+  transform: translateY(3px);
+}
+
+.user-greeting {
+  white-space: nowrap;
+  font-family: var(--display-font);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.auth-status[hidden],
+[data-auth][hidden] {
+  display: none !important;
+}
+
+.auth-status {
+  position: fixed;
+  z-index: 10;
+  top: 104px;
+  right: 4vw;
+  max-width: min(360px, calc(100vw - 32px));
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 16%);
+  font-size: 14px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    height: 78px;
+    padding: 0 22px;
+  }
+
+  .menu-btn {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--jungle-yellow);
+    cursor: pointer;
+  }
+
+  .menu-btn span {
+    display: block;
+    width: 23px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--ink);
+    transition: transform 160ms ease, opacity 160ms ease;
+  }
+
+  .menu-btn[aria-expanded="true"] span:first-child {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-btn[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-btn[aria-expanded="true"] span:last-child {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .links {
+    position: absolute;
+    top: 70px;
+    right: 16px;
+    display: none;
+    width: min(250px, calc(100vw - 32px));
+    align-items: stretch;
+    gap: 0;
+    padding: 15px 20px 20px;
+    border-radius: 4px;
+    background: var(--jungle-yellow);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 16%);
+  }
+
+  .links.is-open {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .links a {
+    padding: 10px 4px;
+  }
+
+  .links .login-btn,
+  .links .logout-btn {
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .user-greeting {
+    padding: 10px 4px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .links .login-btn,
+  .links .logout-btn,
+  .menu-btn span {
+    transition: none;
+  }
+}

@@ -1,0 +1,55 @@
+:root {
+  color-scheme: light;
+  --jungle-yellow: #ffd972;
+  --jungle-pink: #ffb8bd;
+  --jungle-green: #b6e5c4;
+  --jungle-blue: #b8e4e6;
+  --ink: #111111;
+  --display-font: "Kalam", "Comic Sans MS", cursive;
+  --body-font: "Nunito Sans", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background: var(--jungle-yellow);
+  font-family: var(--body-font);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.loading-message {
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+}
